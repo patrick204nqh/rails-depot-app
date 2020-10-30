@@ -14,6 +14,8 @@ class LineItemsTest < ApplicationSystemTestCase
     visit line_items_url
     click_on "New Line Item"
 
+    fill_in "Cart", with: @line_item.cart_id
+    fill_in "Product", with: @line_item.product_id
     click_on "Create Line item"
 
     assert_text "Line item was successfully created"
@@ -24,6 +26,8 @@ class LineItemsTest < ApplicationSystemTestCase
     visit line_items_url
     click_on "Edit", match: :first
 
+    fill_in "Cart", with: @line_item.cart_id
+    fill_in "Product", with: @line_item.product_id
     click_on "Update Line item"
 
     assert_text "Line item was successfully updated"

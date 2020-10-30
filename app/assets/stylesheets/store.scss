@@ -2,6 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.price {
+  font-size: 1.414em;
+}
+form,
+div {
+  display: inline;
+}
+input[type="submit"] {
+  background-color: #282;
+  border-radius: 0.354em;
+  border: solid thin #141;
+  color: white;
+  font-size: 1em;
+  padding: 0.354em 1em;
+}
+input[type="submit"]:hover {
+  background-color: #141;
+}
 .store {
   max-width: 80em;
   width: 90%;
