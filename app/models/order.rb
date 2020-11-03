@@ -23,12 +23,6 @@ class Order < ApplicationRecord
     payment_details = {}
     payment_method = nil
 
-    # logger.info('==========================')
-    # logger.info(pay_type_params)
-    puts '=========xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx================='
-      logger.info(pay_type_params)
-      logger.info pay_type_params[:expiration_date]
-
     case pay_type
     when "Check"
       payment_method = :check
@@ -38,9 +32,6 @@ class Order < ApplicationRecord
       payment_method = :credit_card
 
       month,year = pay_type_params[:expiration_date].split('/')
-
-      logger.info '===============<<<<<<<<<<<<<<<<<<<<<<<'
-      logger.info "#{month} , #{year}"
 
       payment_details[:cc_num] = pay_type_params[:credit_card_number]
       payment_details[:expiration_month] = month
@@ -55,10 +46,6 @@ class Order < ApplicationRecord
       payment_method: payment_method,
       payment_details: payment_details
     )
-
-    logger.info '[[[[[[[[[[[[[[[[[[[[[[[[=============================='
-    logger.info payment_result.succeeded?
-    logger.info self.email
 
     if payment_result.succeeded?
       OrderMailer.received(self).deliver_later

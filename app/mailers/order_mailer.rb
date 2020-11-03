@@ -8,10 +8,6 @@ class OrderMailer < ApplicationMailer
   def received(order)
     @order = order
 
-    logger.info '}}}}}}}}}}}}}}}}}}}}}}}}}}}>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
-    logger.info order.email
-
-
     mail to: order.email, subject: 'Pragmatic Store Order Confirmation'
   end
 

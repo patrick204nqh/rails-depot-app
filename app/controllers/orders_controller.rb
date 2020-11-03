@@ -36,8 +36,8 @@ class OrdersController < ApplicationController
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         # @order.charge!(pay_type_params)
-        OrderMailer.received(@order).deliver_now
-        # ChargeOrderJob.perform_now(@order,pay_type_params.to_h)
+        # OrderMailer.received(@order).deliver_now
+        ChargeOrderJob.perform_now(@order,pay_type_params.to_h)
         format.html { redirect_to store_index_url, notice: 'Thank you for your order.'}
         format.json { render :show, status: :created, location: @order }
       else
