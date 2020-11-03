@@ -1,5 +1,5 @@
 class OrderMailer < ApplicationMailer
-  default from: 'Karl Patrick <nguyenquanghuy0156@gmail.com>'
+  default from: 'nguyenquanghuy0156@gmail.com'
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
@@ -7,6 +7,10 @@ class OrderMailer < ApplicationMailer
   #
   def received(order)
     @order = order
+
+    logger.info '}}}}}}}}}}}}}}}}}}}}}}}}}}}>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
+    logger.info order.email
+
 
     mail to: order.email, subject: 'Pragmatic Store Order Confirmation'
   end

@@ -1,11 +1,10 @@
-import React, { Component } from "react";
-
-class CreditCardPayType extends Component {
+import React from "react";
+class CreditCardPayType extends React.Component {
   render() {
     return (
       <div>
         <div className="field">
-          <label htmlFor="oroder_credit_card_number">CC #</label>
+          <label htmlFor="order_credit_card_number">CC #</label>
           <input
             type="password"
             name="order[credit_card_number]"
@@ -26,5 +25,4 @@ class CreditCardPayType extends Component {
     );
   }
 }
-
 export default CreditCardPayType;

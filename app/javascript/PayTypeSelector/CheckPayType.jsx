@@ -1,6 +1,5 @@
-import React, { Component } from "react";
-
-class CheckPayType extends Component {
+import React from "react";
+class CheckPayType extends React.Component {
   render() {
     return (
       <div>
@@ -24,5 +23,4 @@ class CheckPayType extends Component {
     );
   }
 }
-
 export default CheckPayType;
