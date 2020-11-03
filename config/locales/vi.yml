@@ -1,0 +1,25 @@
+vi:
+  layouts:
+    application:
+      title: "Giá sách thực dụng"
+      home: "Trang chu"
+      questions: "Cau hoi"
+      news: "Thong tin"
+      contact: "Lien he"
+  store:
+    index:
+      title_html: "Danh sách Pragmatic"
+      add_html: "Them vao do hang"
+  carts:
+    cart:
+      title: "Do hang cua ban"
+      empty: "Lam trong do hang"
+      checkout: "Thanh toan"
+  number:
+    currency:
+      format:
+        unit: "$US"
+        precision: 2
+        separator: ","
+        delimiter: "."
+        format: "%n&nbsp;%u"
