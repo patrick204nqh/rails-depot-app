@@ -1,7 +1,7 @@
 vi:
   layouts:
     application:
-      title: "Giá sách thực dụng"
+      title: "Gia sach thuc dung"
       home: "Trang chu"
       questions: "Cau hoi"
       news: "Thong tin"
@@ -23,3 +23,45 @@ vi:
         separator: ","
         delimiter: "."
         format: "%n&nbsp;%u"
+  orders:
+    new:
+      legend: "Thong tin chi tiet"
+    form:
+      name: "Ten"
+      address_html: "Dia chi"
+      email: "E-mail"
+      pay_type: "Thanh toan voi"
+      pay_prompt_html: "Chon phuong thuc"
+      submit: "Thanh toan"
+      pay_types:
+        check: "Check"
+        credit_card: "Credit Card"
+        purchase_order: "Purchase Order"
+      check_pay_type:
+        routing_number: "Routing #"
+        account_number: "Account #"
+      credit_card_pay_type:
+        cc_number: "CC #"
+        expiration_date: "Expiry"
+      purchase_order_pay_type:
+        po_number: "PO #"
+  activerecord:
+    errors:
+      messages:
+        inclusion: "khong co trong danh sach"
+        blank: "không thể để trống"
+    models:
+      order: "Đặt hàng"
+    attributes:
+      order:
+        address: "Địa chỉ"
+        name: "Tên"
+        email: "E-mail"
+        pay_type: "Phương thức thanh toán"
+  errors:
+    template:
+      body: "Có vấn đề với các trường sau:"
+      header:
+        one: "1 lỗi đã ngăn %{model} này được lưu"
+        other: "%{count} lỗi đã ngăn %{model} này được lưu"
+  thanks: "Cảm ơn bạn đã thanh toán!!!!!"
