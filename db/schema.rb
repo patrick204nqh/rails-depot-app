@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_04_035412) do
+ActiveRecord::Schema.define(version: 2020_11_04_041312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,6 +80,16 @@ ActiveRecord::Schema.define(version: 2020_11_04_035412) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "support_requests", force: :cascade do |t|
+    t.string "email", comment: "Email of the submitter"
+    t.string "subject", comment: "Subject of their support email"
+    t.text "body", comment: "Body of their support email"
+    t.bigint "order_id", comment: "their most recent order, if applicable"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["order_id"], name: "index_support_requests_on_order_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "password_digest"
@@ -91,4 +101,5 @@ ActiveRecord::Schema.define(version: 2020_11_04_035412) do
   add_foreign_key "line_items", "carts"
   add_foreign_key "line_items", "orders"
   add_foreign_key "line_items", "products"
+  add_foreign_key "support_requests", "orders"
 end
