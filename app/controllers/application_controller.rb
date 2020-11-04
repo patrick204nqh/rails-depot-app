@@ -1,8 +1,13 @@
 class ApplicationController < ActionController::Base
   before_action :set_i18n_locale_from_params
   before_action :authorize
+  # before_action :set_locale
 
   protected
+    # def set_locale
+    #   I18n.locale =  session[:locale] || I18n.default_locale
+    # end
+
     def set_i18n_locale_from_params
       if params[:locale]
         if I18n.available_locales.map(&:to_s).include?(params[:locale])
